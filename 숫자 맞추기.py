@@ -8,7 +8,11 @@ print("숫자 맞추기 게임!")
 print("1부터 100 사이 숫자를 맞춰보세요.")
 
 while True:
-    guess = int(input("숫자를 입력하세요: "))
+    try:
+        guess = int(input("숫자를 입력하세요: "))
+    except ValueError:
+        print("숫자만 입력해주세요!")
+        continue
 
     if guess < secret_number:
         print("너무 작습니다!")
